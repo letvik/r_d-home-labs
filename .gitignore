@@ -50,4 +50,5 @@ _site/
 *.css
 !petclinic.css
 
+#System files
 .DS_Store
