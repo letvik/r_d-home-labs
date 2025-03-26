@@ -29,3 +29,4 @@ Lecture 4
 <img width="1008" alt="vm***" src="https://github.com/user-attachments/assets/e7c0b242-1510-4037-94c6-1412b5031821" />
 <img width="1088" alt="vm*_" src="https://github.com/user-attachments/assets/9d873e76-cb08-4795-b648-23542ca59e4a" />
 
+<img width="1008" alt="vm*__" src="https://github.com/user-attachments/assets/9fabb903-d55d-4aa2-a0f8-ec6aa36a4783" />
