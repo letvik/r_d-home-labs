@@ -1,0 +1,49 @@
+    1  sudo apt update
+    2  sudo apt upgrade
+    3  pwd
+    4  ls -la
+    5  cd .ssh
+    6  ls -la
+    7  ssh-keygen -t ed25519 -C "rletvik@gmail.com"
+    8  $ eval "$(ssh-agent -s)"
+    9  ssh-add >/.ssh/id_ed25519
+   10  ssh-add ~/.ssh/id_ed25519
+   11  cat ~/.ssh/id_ed25519.pub
+   12  sudo apt-get update
+   13  sudo apt-get install vim git htop
+   14  apt list
+   15  apt list --installed
+   16  apt list git vim htop --installed
+   17  htop
+   18  git clone git@github.com:letvik/r_d-home-labs.git
+   19  ls -la
+   20  rm -r r_d-home-labs
+   21  ls-la
+   22  ls -la
+   23  rm -r /r_d-home-labs
+   24  cd r_d-home-labs/
+   25  ls
+   26  ls -la
+   27  cd .. 
+   28  rm -rf r_d-home-labs
+   29  ls la
+   30  ls -la
+   31  cd ~
+   32  ls
+   33  cd Desktop/
+   34  ls
+   35  git clone git@github.com:letvik/r_d-home-labs.git
+   36  cd r_d-home-labs/
+   37  ls -la
+   38  git branch -v
+   39  git fetch
+   40  git branch -v
+   41  git switch -c lecture5
+   42  git brabnch
+   43  git branch
+   44  histroy
+   45  history
+   46  echo history > history.txt
+   47  ls 
+   48  cat history.txt
+   49  history > history.txt
