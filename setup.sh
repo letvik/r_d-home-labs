@@ -19,8 +19,8 @@ installPackages() {
     for pkg in "${packages[@]}"; do
 
         case "$distro_id" in
-        ubuntu|debian)
 
+        ubuntu|debian)
             echo "Checking package: $pkg (Ubuntu/Debian)"
             if dpkg -l | grep -q "$pkg"; then
                 echo "$pkg is installed. Updating..."
@@ -30,6 +30,7 @@ installPackages() {
                 sudo apt-get install -y "$pkg"
             fi
             ;;
+
         fedora)
             echo "Checking package: $pkg (Fedora)"
             if rpm -q "$pkg"; then
@@ -40,6 +41,7 @@ installPackages() {
                 sudo dnf install -y "$pkg"
             fi
             ;;
+
         centos|rhel)
             echo "Checking package: $pkg (CentOS/RHEL)"
             if rpm -q "$pkg"; then
@@ -50,18 +52,20 @@ installPackages() {
                 sudo yum install -y "$pkg"
             fi
             ;;
+
         *)
             echo "Unsupported or unknown distribution: $distro_id"
             ;;
-    esac
-    done
+        esac
 
-    # Check distribution type from earlier detection
+    done
 
 }
 
+#Сalling packages installation alonng with Docker based on the detected destribution
 case "$distro_id" in
-  ubuntu|debian)
+
+ubuntu|debian)
 
     installPackages
 
@@ -100,11 +104,10 @@ case "$distro_id" in
         # 6. Install Docker Engine and related components
         sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
     fi
-
     sudo apt autoremove -y # Clean up unnecessary packages
     ;;
 
-  fedora)
+fedora)
 
     # Install or upgrade packages
     installPackages
@@ -136,12 +139,10 @@ case "$distro_id" in
         sudo systemctl start docker
         sudo systemctl enable docker
     fi
-
     sudo dnf autoremove -y # Clean up unnecessary packages
     ;;
 
-  centos|rhel)
-
+centos|rhel)
 
     installPackages
 
@@ -172,7 +173,6 @@ case "$distro_id" in
         sudo systemctl start docker
         sudo systemctl enable docker
     fi
-
     sudo yum autoremove -y # Clean up unnecessary packages
     ;;
 
