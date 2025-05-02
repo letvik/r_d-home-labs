@@ -1,0 +1,62 @@
+gymDatabase> db.workouts.find({difficulty: "moderate"})
+[
+  {
+    _id: ObjectId('6813dbeff79500003efc217d'),
+    workout_id: 'x1',
+    description: 'legs pushups',
+    difficulty: 'moderate'
+  },
+  {
+    _id: ObjectId('6813dc16f79500003efc217f'),
+    workout_id: 'x3',
+    description: 'cardio endurance',
+    difficulty: 'moderate'
+  }
+]
+
+---------------------------------------------------------------
+gymDatabase> db.memberships.find({client_id: 6})
+[
+  {
+    _id: ObjectId('6813db7af79500003efc217c'),
+    membership_id: 6,
+    client_id: 6,
+    start_date: '20.05.2025',
+    end_date: '19.05.2026',
+    type: 'Gold'
+  }
+]
+
+---------------------------------------------------------------
+
+gymDatabase>  db.clients.find({age: {$gte: 30}})
+[
+  {
+    _id: ObjectId('68138228f79500003efc2171'),
+    client_id: 1,
+    name: 'Roman',
+    age: 36,
+    email: 'test@email.com'
+  },
+  {
+    _id: ObjectId('6813da7ef79500003efc2173'),
+    client_id: 3,
+    name: 'James',
+    age: 42,
+    email: 'james.brown@example.com'
+  },
+  {
+    _id: ObjectId('6813da7ef79500003efc2174'),
+    client_id: 4,
+    name: 'Maria',
+    age: 33,
+    email: 'maria.garcia@example.com'
+  },
+  {
+    _id: ObjectId('6813da7ef79500003efc2176'),
+    client_id: 6,
+    name: 'Sophie',
+    age: 38,
+    email: 'sophie.johnson@example.com'
+  }
+]
