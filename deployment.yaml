@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-nginx-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-nginx-app
+  template:
+    metadata:
+      labels:
+        app: my-nginx-app
+    spec:
+      containers:
+      - name: my-nginx-app
+        image: nginx:1.25.2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+        volumeMounts:
+        - name: nginx-storage
+          mountPath: /usr/share/nginx/html
+        env:
+        - name: WELCOME_MSG
+          valueFrom:
+            configMapKeyRef:
+              name: nginx-config
+              key: WELCOME_MSG
+        - name: NGINX_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: nginx-config
+              key: NGINX_PORT
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: nginx-secret
+              key: API_KEY
+      volumes:
+      - name: nginx-storage
+        persistentVolumeClaim:
+          claimName: nginx-pvc
