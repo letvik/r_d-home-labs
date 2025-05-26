@@ -12,3 +12,26 @@ Redis App.
 
 ![k delete pod](https://github.com/user-attachments/assets/6a5f2825-de74-4faa-9380-d4f7def3b931)
 
+
+2: Налаштування Falco в Kubernetes за допомогою DaemonSet
+
+Розгорнув Фалко згідно з вимог завдання, налаштував директорії і русерси, а також привілейований доступ (privileged: true).
+
+Створив сервіс аккаунт в неймспейсі, бо без цього не хотіло запускатися...
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: falco
+  namespace: kube-system
+
+Запустив за допомогою: k apply -f falco-daemonset.yaml
+
+Перевірка подів системному неймспейсі: k get pods -l app=falco -n kube-system
+![2](https://github.com/user-attachments/assets/f7408254-1f4c-4e88-b00d-01665808d7e7)
+
+k describe daemonset n=kube-system
+![3](https://github.com/user-attachments/assets/c17afc45-fd23-4d41-ad2d-21748a601913)
+
+Перегляд логів: kubectl logs -l app=falco -n kube-system
+![4](https://github.com/user-attachments/assets/b9e1fab1-d2b6-4325-9986-333e9f657590)
