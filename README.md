@@ -49,14 +49,12 @@
 В CloudShell створив EIP і привʼязав його до інстансу.
 
 aws ec2 allocate-address
+![EIP_console](https://github.com/user-attachments/assets/e25bcee2-081a-49cc-9887-7e8bb6546f8b)
 
 В консолі зробив привʼязку.
 aws ec2 associate-address --instance-id i-0801b6f3a566593a3 --allocation-id eipalloc-088327d6d8de1b5b7
- ![EIP EC2](https://github.com/user-attachments/assets/ba88c6f6-105b-4243-ac82-b79df798733f)
-
-![EIP_console](https://github.com/user-attachments/assets/e25bcee2-081a-49cc-9887-7e8bb6546f8b)
+![EIP EC2](https://github.com/user-attachments/assets/ba88c6f6-105b-4243-ac82-b79df798733f)
 ![EIP-UI](https://github.com/user-attachments/assets/d0fc159c-03b0-4094-900f-9e1977333d51)
-![EIP-UI](https://github.com/user-attachments/assets/0c56eaa2-2d5a-4c96-b3cf-7e3eda737b33)
 
 EIP
 ![EC2_EIP_UI](https://github.com/user-attachments/assets/6ab386d7-acbe-4e5c-9e0b-bf3365a719db)
