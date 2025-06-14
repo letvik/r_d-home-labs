@@ -1,0 +1,16 @@
+aws rds create-db-instance \
+    --db-instance-identifier test-mysql-instance \
+    --db-instance-class db.t4g.micro \
+    --engine mysql \
+    --engine-version 8.0.35 \
+    --allocated-storage 20 \
+    --master-username admin \
+    --master-user-password 'SecreT$25*' \
+    --backup-retention-period 7 \
+    --vpc-security-group-ids sg-0d456d3c2094f9800 \
+    --publicly-accessible \
+    --region us-east-1 \
+    --availability-zone us-east-1a \
+    --storage-type gp2 \
+    --db-name testdb \
+    --port 3306
