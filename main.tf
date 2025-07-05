@@ -18,3 +18,12 @@ module "s3" {
   source = "./modules/s3"
   env    = var.env
 }
+
+resource "aws_instance" "my-ec2-tf-import-demo" {
+  ami           = "ami-000ec6c25978d5999"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "my-ec2-tf-import-demo"
+  }
+}
