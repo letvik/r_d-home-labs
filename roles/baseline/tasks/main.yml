@@ -1,0 +1,16 @@
+- name: Add authorized SSH keys
+  authorized_key:
+    user: "{{ item.user }}"
+    key: "{{ item.key }}"
+  loop: "{{ ssh_keys }}"
+
+- name: Install basic packages
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  loop:
+    - vim
+    - git
+    - mc
+    - ufw

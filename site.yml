@@ -1,0 +1,12 @@
+- name: Apply baseline and firewall
+  hosts: all
+  become: true
+  roles:
+    - baseline
+    - firewall
+
+- name: Apply webserver config
+  hosts: all
+  become: true
+  roles:
+    - nginx

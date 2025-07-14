@@ -1,0 +1,5 @@
+- name: Only apply security-related settings
+  hosts: all
+  become: yes
+  roles:
+    - firewall
